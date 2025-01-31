@@ -10,6 +10,7 @@ namespace CompetitionJudo.Data
         public int MaxCompetiteursParPoule;
         public TimeSpan2 TempsCombat { get; set; }
         public TimeSpan2 TempsImmo { get; set; }
+        public int EchelleImpression { get; set; }
         public bool PourImpression { get; set; }
         public Categories Categorie { get; set; }
         public string Commentaire { get; set; }

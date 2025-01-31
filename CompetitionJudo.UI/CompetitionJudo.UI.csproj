@@ -76,13 +76,14 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>145C661B975797E2A2A6720205132B039FAB1BA5</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2A7BCA373AA1F78C02B3A8C66B14DD9D2144D548</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>CompetitionJudo.UI_CléTemporaire.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />

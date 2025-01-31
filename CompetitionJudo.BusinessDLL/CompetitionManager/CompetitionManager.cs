@@ -21,6 +21,7 @@ namespace CompetitionJudo.Business.CompetitionManager
                 DateCompetition = date,
                 CheminFichier = cheminFichier,
                 NombreParPoule = 4,
+                EchelleImpression = 125,
                 TempsCombat = new NewDictionary<Categories, TimeSpan2>(CreateTempsCombat()),
                 TempsImmo = new NewDictionary<Categories, TimeSpan2>(CreateTempsImmo())
             };

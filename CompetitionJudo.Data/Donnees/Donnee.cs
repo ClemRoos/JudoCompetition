@@ -20,6 +20,8 @@ namespace CompetitionJudo.Data.Donnees
 
         public int NombreParPoule { get; set; }
 
+        public int EchelleImpression { get; set; }
+
         public NewDictionary<Categories, TimeSpan2> TempsCombat { get; set; }
         public NewDictionary<Categories, TimeSpan2> TempsImmo { get; set; }
     }

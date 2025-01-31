@@ -28,13 +28,13 @@ namespace CompetitionJudo.UI
 
 
         public FenetreParametres(Action<NewDictionary<Categories, TimeSpan2>, NewDictionary<Categories, TimeSpan2>> actionUpdateTempsCombats,
-                                Action<int> actionUpdateNbJudokas,
+                                Action<int> actionUpdateNbJudokas, Action<int> actionUpdateEchelleImpression,
                                 NewDictionary<Categories, TimeSpan2> tempsCombat,
                                 NewDictionary<Categories, TimeSpan2> tempsImmo,
-                                int nbJudokasParPoule)
+                                int nbJudokasParPoule, int echelleImpression)
         {
             InitializeComponent();
-            VM = new FenetreParametresViewModel(actionUpdateTempsCombats, actionUpdateNbJudokas,nbJudokasParPoule,tempsCombat,tempsImmo);
+            VM = new FenetreParametresViewModel(actionUpdateTempsCombats, actionUpdateNbJudokas, actionUpdateEchelleImpression,nbJudokasParPoule, tempsCombat,tempsImmo,echelleImpression);
             this.DataContext = VM;
 
             InitializePerso();
@@ -75,6 +75,25 @@ namespace CompetitionJudo.UI
                 default:
                     break;
             }
+
+            switch (VM.EchelleImpression)
+            {
+                case 100:
+                    ListeEchelleImpression.SelectedIndex = 0;
+                    break;
+                case 125:
+                    ListeEchelleImpression.SelectedIndex = 1;
+                    break;
+                case 150:
+                    ListeEchelleImpression.SelectedIndex = 2;
+                    break;
+                case 175:
+                    ListeEchelleImpression.SelectedIndex = 3;
+                    break;
+                default:
+                    ListeEchelleImpression.SelectedIndex = 1;
+                    break;
+            }
         }
 
         private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)
@@ -101,7 +120,9 @@ namespace CompetitionJudo.UI
             var dictionnaireSerialisableTempsImmo = new NewDictionary<Categories, TimeSpan2>(dictionnaireTempsImmo);
 
             VM.NbJudokasParPoule = Convert.ToInt16(ListeNombreJudokasParPoule.Text);
+            VM.EchelleImpression = Convert.ToInt16(ListeEchelleImpression.Text);
             VM.ActionUpdateNbJudokas(VM.NbJudokasParPoule);
+            VM.ActionUpdateEchelleImpression(VM.EchelleImpression);
             VM.ActionUpdateTempsCombats(dictionnaireSerialisableTempsCombat, dictionnaireSerialisableTempsImmo);
             this.Close();
         }

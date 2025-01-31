@@ -164,6 +164,11 @@ namespace CompetitionJudo.UI
             VM.Donnee.NombreParPoule = nbJudokasParPoule;
         }
 
+        private void updateEchelleImpression(int echelleImpression)
+        {
+            VM.Donnee.EchelleImpression = echelleImpression;
+        }
+
         //Résultats généraux
         private void ButtonResultatClub_Click(object sender, RoutedEventArgs e)
         {
@@ -176,8 +181,9 @@ namespace CompetitionJudo.UI
         {
             Action<NewDictionary<Categories, TimeSpan2>, NewDictionary<Categories, TimeSpan2>> actionUpdateTempsCombats = updateTempsDeCombat;
             Action<int> actionUpdateNbJudokas = updateNombreJudokasParPoule;
+            Action<int> actionUpdateEchelleImpression = updateEchelleImpression;
 
-            FenetreParametres fen = new FenetreParametres(actionUpdateTempsCombats, actionUpdateNbJudokas, VM.Donnee.TempsCombat, VM.Donnee.TempsImmo, VM.Donnee.NombreParPoule);
+            FenetreParametres fen = new FenetreParametres(actionUpdateTempsCombats, actionUpdateNbJudokas, actionUpdateEchelleImpression,VM.Donnee.TempsCombat, VM.Donnee.TempsImmo, VM.Donnee.NombreParPoule, VM.Donnee.EchelleImpression);
             fen.ShowDialog();
         }
 

@@ -58,22 +58,34 @@ namespace CompetitionJudo.UI
 
         private void NouvelleCompetition_Click_1(object sender, RoutedEventArgs e)
         {
-            var dialog = new SaveFileDialog();
-            dialog.Filter = "xml files (*.xml)|*.xml";
-            dialog.FileName = string.Format("{0} {1:MM-dd-yyyy} {2}", VM.NomNouvelleCompetition, VM.DateNouvelleCompetition, VM.LieuNouvelleCompetition);
-
-            if ((bool)dialog.ShowDialog())
+            if (string.IsNullOrEmpty(VM.NomNouvelleCompetition) || string.IsNullOrEmpty(VM.LieuNouvelleCompetition) )
             {
-                VM.IsLoading = true;
+                string messageBoxText = "Lieu ou nom compétition manquant";
+                string caption = "Erreur";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Error;
 
-                CompetitionManager CM = new CompetitionManager();
-                var donneesNouvelleCompetition = CM.CreerNouvelleCompetition(VM.LieuNouvelleCompetition, VM.NomNouvelleCompetition, VM.DateNouvelleCompetition, dialog.FileName);
-                DataSerialisation DS = new DataSerialisation();
-                DS.EnregistrerCompetition(dialog.FileName, donneesNouvelleCompetition);
-                var fenetreCompetition = new FenetreCompetition(donneesNouvelleCompetition);
-                fenetreCompetition.Show();
+                MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+            else
+            {
+                var dialog = new SaveFileDialog();
+                dialog.Filter = "xml files (*.xml)|*.xml";
+                dialog.FileName = string.Format("{0} {1:MM-dd-yyyy} {2}", VM.NomNouvelleCompetition, VM.DateNouvelleCompetition, VM.LieuNouvelleCompetition);
 
-                Close();
+                if ((bool)dialog.ShowDialog())
+                {
+                    VM.IsLoading = true;
+
+                    CompetitionManager CM = new CompetitionManager();
+                    var donneesNouvelleCompetition = CM.CreerNouvelleCompetition(VM.LieuNouvelleCompetition, VM.NomNouvelleCompetition, VM.DateNouvelleCompetition, dialog.FileName);
+                    DataSerialisation DS = new DataSerialisation();
+                    DS.EnregistrerCompetition(dialog.FileName, donneesNouvelleCompetition);
+                    var fenetreCompetition = new FenetreCompetition(donneesNouvelleCompetition);
+                    fenetreCompetition.Show();
+
+                    Close();
+                }
             }
         }
 
@@ -117,7 +129,7 @@ namespace CompetitionJudo.UI
                 File.WriteAllBytes(saveFileDialog.FileName, Properties.Resources.Guide);
             }
         }
-        
+
         #endregion
     }
 }

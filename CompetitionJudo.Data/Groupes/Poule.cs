@@ -12,7 +12,7 @@ namespace CompetitionJudo.Data
         {
             CoordonneesNomCompetition = new PointF(320, 20);
             CoordonneesPoidsGroupe = new PointF(320, 40);
-            CoordonneesTempsCombat = new PointF(20, 20);
+            CoordonneesTempsCombat = new PointF(20, 40);
             CoordonneesTempsImmobilisation = new PointF(20, 40);
         }
 

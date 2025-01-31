@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CompetitionJudo.UI.ViewModel
 {
@@ -15,14 +16,21 @@ namespace CompetitionJudo.UI.ViewModel
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler == null)
+            try
             {
-                return;
-            }
+                PropertyChangedEventHandler handler = PropertyChanged;
+                if (handler == null)
+                {
+                    return;
+                }
 
-            var e = new PropertyChangedEventArgs(propertyName);
-            handler(this, e);
+                var e = new PropertyChangedEventArgs(propertyName);
+                handler(this, e);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("La dernière opération n'a pas été prise en compte.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
         }
 
         #endregion

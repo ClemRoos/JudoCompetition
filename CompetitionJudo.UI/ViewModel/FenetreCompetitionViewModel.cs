@@ -367,13 +367,14 @@ namespace CompetitionJudo.UI.ViewModel
 
                 foreach (var groupe in listegroupes)
                 {
-                    var groupeTemp = new Groupe() { MaxCompetiteursParPoule = Donnee.NombreParPoule, id = groupe };
+                    var groupeTemp = new Groupe() { MaxCompetiteursParPoule = Donnee.NombreParPoule, id = groupe, EchelleImpression = Donnee.EchelleImpression };
 
                     groupeTemp.Competiteurs.AddRange(Donnee.ListeCompetiteurs.Where(c => c.Poule == groupe));
 
                     groupeTemp.Categorie = ListeCategories.First(c => c == groupeTemp.Competiteurs.First().Categorie);
                     groupeTemp.TempsCombat = Donnee.TempsCombat.ToDictionary().First(k => k.Key == groupeTemp.Categorie).Value;
                     groupeTemp.TempsImmo = Donnee.TempsImmo.ToDictionary().First(k => k.Key == groupeTemp.Categorie).Value;
+                    groupeTemp.EchelleImpression = Donnee.EchelleImpression;
 
                     if (groupeTemp.Competiteurs.Select(c => c.Sexe).Distinct().Count() == 1)
                     {

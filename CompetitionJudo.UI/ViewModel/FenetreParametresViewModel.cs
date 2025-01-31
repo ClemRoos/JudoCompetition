@@ -15,18 +15,22 @@ namespace CompetitionJudo.UI.ViewModel
 
         public Action<NewDictionary<Categories, TimeSpan2>, NewDictionary<Categories, TimeSpan2>> ActionUpdateTempsCombats { get; set; }
         public Action<int> ActionUpdateNbJudokas { get; set; }
+        public Action<int> ActionUpdateEchelleImpression { get; set; }
         public int NbJudokasParPoule { get; set; }
         public NewDictionary<Categories, TimeSpan2> TempsCombats { get; set; }
         public NewDictionary<Categories, TimeSpan2> TempsImmo { get; set; }
+        public int EchelleImpression { get; set; }
 
 
-        public FenetreParametresViewModel(Action<NewDictionary<Categories, TimeSpan2>, NewDictionary<Categories, TimeSpan2>> actionUpdateTempsCombats, Action<int> actionUpdateNbJudokas, int nbJudokasParPoule, NewDictionary<Categories, TimeSpan2> tempsCombats, NewDictionary<Categories, TimeSpan2> tempsImmo)
+        public FenetreParametresViewModel(Action<NewDictionary<Categories, TimeSpan2>, NewDictionary<Categories, TimeSpan2>> actionUpdateTempsCombats, Action<int> actionUpdateNbJudokas, Action<int> actionUpdateEchelleImpression, int nbJudokasParPoule, NewDictionary<Categories, TimeSpan2> tempsCombats, NewDictionary<Categories, TimeSpan2> tempsImmo,int echelleImpression)
         {
             this.ActionUpdateNbJudokas = actionUpdateNbJudokas;
             this.ActionUpdateTempsCombats = actionUpdateTempsCombats;
+            this.ActionUpdateEchelleImpression = actionUpdateEchelleImpression;
             this.NbJudokasParPoule = nbJudokasParPoule;
             this.TempsCombats = tempsCombats;
             this.TempsImmo = tempsImmo;
+            this.EchelleImpression = echelleImpression;
         }
 
         public List<Categories> ListeCategories
