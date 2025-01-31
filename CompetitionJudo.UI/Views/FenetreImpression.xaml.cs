@@ -129,8 +129,6 @@ namespace CompetitionJudo.UI
 
         private void pd_PrintPageSoloPage(object sender, PrintPageEventArgs ev)
         {
-            //ParametreEchelleWindows = 0.833333f;
-
             Graphics graphic = ev.Graphics;
 
             var ig = new ImageGroupe(VM.LesGroupes.First(c => c.id.ToString().Equals(ComboBoxListeGroupes.Text)));
@@ -138,10 +136,7 @@ namespace CompetitionJudo.UI
             var poidsMax = ig.Organisation.grilleCompetiteurs.Max(c => c.Poids);
             ParametreEchelleWindows = InitiliseParametreEchelleWindows(ig.Groupe.EchelleImpression);
 
-            //System.Drawing.Point ulCorner = new System.Drawing.Point(1, 1);
-
             graphic.DrawImage(ig.imageGroupe, 1, 1, ig.imageGroupe.Width * ParametreEchelleWindows, ig.imageGroupe.Height * ParametreEchelleWindows);
-            //graphic.DrawImage(ig.imageGroupe, ulCorner);
 
             graphic.DrawString(string.Format(NomDateCompetition, VM.NomCompetition.ToString(), String.Format("{0:d MMMM yyyy}", VM.DateCompetition)), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesNomCompetition.X, ig.Organisation.CoordonneesNomCompetition.Y));
             graphic.DrawString(string.Format(DefinitionPoule, ig.Groupe.Categorie, ig.Organisation.grilleCompetiteurs[0].Poule.ToString(), poidsMin, poidsMax), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesPoidsGroupe.X, ig.Organisation.CoordonneesPoidsGroupe.Y));
@@ -198,11 +193,7 @@ namespace CompetitionJudo.UI
                 var poidsMinG2 = ig2.Organisation.grilleCompetiteurs.Min(c => c.Poids);
                 var poidsMaxG2 = ig2.Organisation.grilleCompetiteurs.Max(c => c.Poids);
 
-                //var ulCorner2 = new PointF(1, 585 * ParametreEchelleWindows);
                 graphic.DrawImage(ig.imageGroupe, 1, 585, ig.imageGroupe.Width * ParametreEchelleWindows, ig.imageGroupe.Height * ParametreEchelleWindows);
-
-
-                // graphic.DrawImage(ig2.imageGroupe, ulCorner2);
 
                 graphic.DrawString(string.Format(NomDateCompetition, VM.NomCompetition.ToString(), String.Format("{0:d MMMM yyyy}", VM.DateCompetition)), drawFont, drawBrush, new PointF(320, (20 + 585)));
                 graphic.DrawString(string.Format(DefinitionPoule, ig2.Groupe.Categorie, ig2.Organisation.grilleCompetiteurs[0].Poule.ToString(), poidsMinG2, poidsMaxG2), drawFont, drawBrush, new PointF(320, (40 + 585)));
@@ -236,9 +227,6 @@ namespace CompetitionJudo.UI
         {
             PrintDocument pd = new PrintDocument();
             pd.PrintPage += new PrintPageEventHandler(pd_PrintPageSoloPage);
-            //PrintPreviewDialog printPreview = new PrintPreviewDialog();
-            //printPreview.Document = pd;
-            //printPreview.Show();
             try
             {
                 pd.Print();
@@ -248,8 +236,6 @@ namespace CompetitionJudo.UI
 
                 throw;
             }
-
-            //this.Close();
         }
 
         private void BoutonImprimerTousLesGroupes_Click(object sender, RoutedEventArgs e)
@@ -257,9 +243,6 @@ namespace CompetitionJudo.UI
 
             PrintDocument pd = new PrintDocument();
             pd.PrintPage += new PrintPageEventHandler(pd_PrintPage);
-            //PrintPreviewDialog printPreview = new PrintPreviewDialog();
-            //printPreview.Document = pd;
-            //printPreview.Show();
             try
             {
                 pd.Print();
@@ -269,8 +252,7 @@ namespace CompetitionJudo.UI
 
                 throw;
             }
-
-            this.Close();
+            Close();
         }
     }
 }
