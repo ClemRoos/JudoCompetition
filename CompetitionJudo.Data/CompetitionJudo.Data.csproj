@@ -105,6 +105,9 @@
     <None Include="Resources\ResizePoule3.png" />
     <None Include="Resources\ResizePoule4.png" />
     <None Include="Resources\ResizePoule5.png" />
+    <None Include="Resources\ResizeTableau4.png" />
+    <None Include="Resources\ResizeTableau8.png" />
+    <None Include="Resources\ResizeTableau16.png" />
     <Content Include="Resources\templateP2.png" />
     <Content Include="Resources\templateP3.png" />
     <Content Include="Resources\templateP4.png" />

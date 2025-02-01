@@ -9,7 +9,7 @@
         <StackPanel x:Name="baseStackPanel"   Margin="5,5,5,5" VerticalAlignment="Top">        
             <StackPanel x:Name="teteStackPanel" Orientation="Horizontal" Margin="5,5,5,5">
             <ComboBox MinWidth="40" Name="ComboBoxListeGroupes" ItemsSource="{Binding Mode=OneWay}" SelectionChanged="ListeGroupes_SelectionChanged" VerticalContentAlignment="Center"/>
-            <Button x:Name="BoutonPouleToTableau" IsEnabled="False" ToolTip="Fonction pas encore disponible" Click="BoutonPouleToTableau_Click" Margin="5,0">
+            <Button x:Name="BoutonPouleToTableau" IsEnabled="True" ToolTip="Fonction pas encore disponible" Click="BoutonPouleToTableau_Click" Margin="5,0">
                 <StackPanel Orientation="Horizontal">
                         <Image Name="ImagePoule" Source="/Resources/Poule.png" Width="40" Height="40" Margin="5,0" />
                     <TextBlock Name="LabelPoule" Text="Poule" VerticalAlignment="Center" Margin="5,0,5,0" />

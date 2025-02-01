@@ -8,14 +8,6 @@ namespace CompetitionJudo.Data
 {
     public class Poule : OrganisationCombat
     {
-        public Poule()
-        {
-            CoordonneesNomCompetition = new PointF(320, 20);
-            CoordonneesPoidsGroupe = new PointF(320, 40);
-            CoordonneesTempsCombat = new PointF(20, 40);
-            CoordonneesTempsImmobilisation = new PointF(20, 40);
-        }
-
         public override void CreerCoordonnees()
         {
             throw new NotImplementedException();

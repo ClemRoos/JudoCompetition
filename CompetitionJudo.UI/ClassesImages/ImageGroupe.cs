@@ -26,37 +26,47 @@ namespace CompetitionJudo.UI
         {
             this.Groupe = groupe;
 
-            init();
+            InitGroupeTableau();
 
             imageGroupe = new Bitmap(Organisation.sourceImage);
             
         }
-
-        private void init()
+        
+        private void InitGroupeTableau()
         {
             if (Groupe.TypeGroupe == TypeGroupe.Tableau)
             {
-                if (Groupe.Competiteurs.Count <= 4)
+                if (Groupe.Competiteurs.Count < 4)
+                {
+                    throw new Exception("Impossible d'imprimer un tableau de moins de 4 participants");
+                }
+                else if (Groupe.Competiteurs.Count <= 4)
                 {
                     Organisation = new TableauDe4(Groupe.Competiteurs);
                 }
-                if (Groupe.Competiteurs.Count > 4 && Groupe.Competiteurs.Count <= 8)
+                else if(Groupe.Competiteurs.Count > 4 && Groupe.Competiteurs.Count <= 8)
                 {
                     Organisation = new TableauDe8(Groupe.Competiteurs);
                 }
-                if (Groupe.Competiteurs.Count > 8 && Groupe.Competiteurs.Count <= 16)
+                else if(Groupe.Competiteurs.Count > 8 && Groupe.Competiteurs.Count <= 16)
                 {
                     Organisation = new TableauDe16(Groupe.Competiteurs);
                 }
-                if (Groupe.Competiteurs.Count > 16 && Groupe.Competiteurs.Count <= 32)
+                //else if(Groupe.Competiteurs.Count > 16 && Groupe.Competiteurs.Count <= 32)
+                //{
+                //    Organisation = new TableauDe32(Groupe.Competiteurs);
+                //}
+                else
                 {
-                    Organisation = new TableauDe32(Groupe.Competiteurs);
+                    throw new Exception("Impossible de créer un tableau de plus de 16 participants");
                 }
             }
             else
             {
                 switch (Groupe.Competiteurs.Count())
                 {
+                    case 1:
+                        throw new Exception("Impossible de créer une poule contenant une seule personne.");
                     case 2:                        
                          Organisation = new PouleDe2(Groupe.Competiteurs);
                          break;
@@ -72,15 +82,9 @@ namespace CompetitionJudo.UI
                     case 6:
                         Organisation = new PouleDe6(Groupe.Competiteurs); 
                         break;
+                    default:
+                        throw new Exception("Impossible de créer une poule de plus de 6 personnes");
                 }
-            }
-        }
-
-        private void DrawCompetiteurs()
-        {
-            for (int i = 0; i < this.Groupe.Competiteurs.Count(); i++)
-            {
-                
             }
         }
     }

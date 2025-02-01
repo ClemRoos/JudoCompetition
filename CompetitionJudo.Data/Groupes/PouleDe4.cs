@@ -21,7 +21,6 @@ namespace CompetitionJudo.Data
 
         public override void CreerCoordonnees()
         {
-
             listeCoordonneesNom = new List<Coordonnee>();
             listeCoordonneesPrenom = new List<Coordonnee>();
             listeCoordonneesClub = new List<Coordonnee>();
@@ -49,9 +48,6 @@ namespace CompetitionJudo.Data
             listeCoordonneesClub.Add(cl2);
             listeCoordonneesClub.Add(cl3);
             listeCoordonneesClub.Add(cl4);
-
-
-
         }
     }
 }

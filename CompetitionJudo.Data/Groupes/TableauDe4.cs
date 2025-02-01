@@ -11,7 +11,7 @@ namespace CompetitionJudo.Data
         public TableauDe4(List<Competiteur> grilleCompetiteurs)
         {
             this.grilleCompetiteurs = grilleCompetiteurs;
-            this.sourceImage = Resources.TemplateT4;
+            this.sourceImage = Resources.ResizeTableau4;
             CreerCoordonnees();
         }
 
@@ -24,33 +24,30 @@ namespace CompetitionJudo.Data
             listeCoordonneesClub = new List<Coordonnee>();
             listeCoordonneesNom = new List<Coordonnee>();
             listeCoordonneesPrenom = new List<Coordonnee>();
-
-            var n1 = new Coordonnee(100, 50);
-            var n2 = new Coordonnee(120, 50);
-            var n3 = new Coordonnee(140, 50);
-            var n4 = new Coordonnee(160, 50);
+            var n1 = new Coordonnee(50, 165);
+            var n2 = new Coordonnee(50, 235);
+            var n3 = new Coordonnee(50, 300);
+            var n4 = new Coordonnee(50, 370);
             listeCoordonneesNom.Add(n1);
             listeCoordonneesNom.Add(n2);
             listeCoordonneesNom.Add(n3);
             listeCoordonneesNom.Add(n4);
-
-            var p1 = new Coordonnee(100, 80);
-            var p2 = new Coordonnee(120, 80);
-            var p3 = new Coordonnee(140, 80);
-            var p4 = new Coordonnee(160, 80);
+            var p1 = new Coordonnee(50, 180);
+            var p2 = new Coordonnee(50, 250);
+            var p3 = new Coordonnee(50, 315);
+            var p4 = new Coordonnee(50, 385);
             listeCoordonneesPrenom.Add(p1);
             listeCoordonneesPrenom.Add(p2);
             listeCoordonneesPrenom.Add(p3);
             listeCoordonneesPrenom.Add(p4);
-
-            var c1 = new Coordonnee(100, 100);
-            var c2 = new Coordonnee(120, 100);
-            var c3 = new Coordonnee(140, 100);
-            var c4 = new Coordonnee(160, 100);
-            listeCoordonneesClub.Add(c1);
-            listeCoordonneesClub.Add(c2);
-            listeCoordonneesClub.Add(c3);
-            listeCoordonneesClub.Add(c4);
+            var cl1 = new Coordonnee(50, 195);
+            var cl2 = new Coordonnee(50, 265);
+            var cl3 = new Coordonnee(50, 330);
+            var cl4 = new Coordonnee(50, 400);
+            listeCoordonneesClub.Add(cl1);
+            listeCoordonneesClub.Add(cl2);
+            listeCoordonneesClub.Add(cl3);
+            listeCoordonneesClub.Add(cl4);
         }
     }
 }

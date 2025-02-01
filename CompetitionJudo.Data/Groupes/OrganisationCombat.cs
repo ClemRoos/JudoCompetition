@@ -8,6 +8,14 @@ namespace CompetitionJudo.Data
 {
     public abstract class OrganisationCombat
     {
+        public OrganisationCombat()
+        {
+            CoordonneesNomCompetition = new PointF(320, 20);
+            CoordonneesPoidsGroupe = new PointF(320, 40);
+            CoordonneesTempsCombat = new PointF(20, 20);
+            CoordonneesTempsImmobilisationIppon = new PointF(20, 40);
+        }
+
         public List<Competiteur> grilleCompetiteurs { get; set; }
         public double poidsMini { get; set; }
         public double poidsMaxi { get; set; }
@@ -21,7 +29,8 @@ namespace CompetitionJudo.Data
         public PointF CoordonneesNomCompetition { get; set; }
         public PointF CoordonneesPoidsGroupe { get; set; }
         public PointF CoordonneesTempsCombat { get; set; }
-        public PointF CoordonneesTempsImmobilisation { get; set; }
+        public PointF CoordonneesTempsImmobilisationIppon { get; set; }
+        public PointF CoordonneesTempsImmobilisationWazaari { get; set; }
 
 
         public abstract void CreerFeuille();
