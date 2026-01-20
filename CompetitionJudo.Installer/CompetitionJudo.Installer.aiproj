@@ -1,0 +1,60 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">All</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>de0eaaa2-877e-40a5-8df7-6e5085559758</ProjectGuid>
+    <OutputType>msi</OutputType>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>CompetitionJudo.Installer.aip</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <IsWindowsApplication>True</IsWindowsApplication>
+    <AssemblyName>CompetitionJudo.Installer</AssemblyName>
+    <Name>CompetitionJudo.Installer</Name>
+    <RootNamespace>CompetitionJudo.Installer</RootNamespace>
+    <LoadFromTemplate>
+    </LoadFromTemplate>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DefaultBuild' ">
+    <OutputPath>C:\Dev2025</OutputPath>
+    <PackageName>CompetitionJudoInstaller</PackageName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CompetitionJudo.Installer.aip">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompetitionJudo.BusinessDLL\CompetitionJudo.Business.csproj">
+      <Name>CompetitionJudo.Business</Name>
+      <Project>{c178160b-e27a-4d09-8f9e-26088ee54df9}</Project>
+      <Private>True</Private>
+      <OutputsToImport>PrimaryOutput;References;ContentOutput;DocumentationOutput;LocalizedResourcesOutput;SymbolsOutput;ComTypeLibraryOutput</OutputsToImport>
+    </ProjectReference>
+    <ProjectReference Include="..\CompetitionJudo.Data\CompetitionJudo.Data.csproj">
+      <Name>CompetitionJudo.Data</Name>
+      <Project>{a7667256-4278-46ae-a495-f4118e27f99f}</Project>
+      <Private>True</Private>
+      <OutputsToImport>PrimaryOutput;References;ContentOutput;DocumentationOutput;LocalizedResourcesOutput;SymbolsOutput;ComTypeLibraryOutput</OutputsToImport>
+    </ProjectReference>
+    <ProjectReference Include="..\CompetitionJudo.UI\CompetitionJudo.UI.csproj">
+      <Name>CompetitionJudo.UI</Name>
+      <Project>{3c12694a-504e-4e8f-846f-cfd6924fab87}</Project>
+      <Private>True</Private>
+      <OutputsToImport>PrimaryOutput;References;ContentOutput;DocumentationOutput;LocalizedResourcesOutput;SymbolsOutput;ComTypeLibraryOutput</OutputsToImport>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="Build">
+    <Error Text="This project requires Advanced Installer tool. Please download it from https://www.advancedinstaller.com/download.html" />
+  </Target>
+  <Target Name="Rebuild">
+    <Error Text="This project requires Advanced Installer tool. Please download it from https://www.advancedinstaller.com/download.html" />
+  </Target>
+  <Target Name="Clean">
+  </Target>
+  <Target Name="ResolveAssemblyReferences">
+  </Target>
+  <Import Condition="'$(AdvancedInstallerMSBuildTargets)' != ''" Project="$(AdvancedInstallerMSBuildTargets)\AdvInstExtTasks.Targets" />
+  <Import Condition="('$(AdvancedInstallerMSBuildTargets)' == '') And (Exists('$(MSBuildExtensionsPath32)\Caphyon\Advanced Installer\AdvInstExtTasks.Targets'))" Project="$(MSBuildExtensionsPath32)\Caphyon\Advanced Installer\AdvInstExtTasks.Targets" />
+</Project>
