@@ -305,6 +305,93 @@
   <ItemGroup>
     <Resource Include="Resources\help.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Delete_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Female_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Print_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Save_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AddPerson_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Generate_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Import_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Male_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Settings_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Stats_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Download_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FileOpen_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Help_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Create_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cancel_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PrintMultiple_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PrintOne_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Poule_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tableau_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Valid_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PersonAdd_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Boy_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Girl_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Boy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Girl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Warning.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

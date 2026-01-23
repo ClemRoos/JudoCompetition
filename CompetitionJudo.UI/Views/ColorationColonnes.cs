@@ -14,7 +14,7 @@ namespace CompetitionJudo.UI
             Competiteur input = value as Competiteur;
             if (input.Poule % 2 != 0)
             {
-                return Brushes.LightGray;
+                return "#A1C9FF";
             }
             else
             {
@@ -34,7 +34,7 @@ namespace CompetitionJudo.UI
         {
             Groupe groupe = value as Groupe;
 
-            SolidColorBrush lineColor = Brushes.White;
+            string lineColor = "#ffffff";
 
             if (groupe != null)
             {
@@ -43,33 +43,33 @@ namespace CompetitionJudo.UI
                 if (groupe.CompositionGroupe == Sexes.Mixte)
                 {
                     groupe.Commentaire = "Mixte." + groupe.Commentaire;
-                    lineColor = Brushes.Yellow;
+                    lineColor = "#FCBD00";
                 }           
                 if (groupe.Competiteurs.Count > 1)
                 {
                     if (groupe.Competiteurs.Select(c => c.Club).Distinct().Count() != groupe.Competiteurs.Count())
                     {
                         groupe.Commentaire = "+1 même club par poule."+ groupe.Commentaire;
-                        lineColor = Brushes.Yellow;
+                        lineColor = "#FCBD00";
                     }
                     if (groupe.PoidsMax > ((groupe.PoidsMin) + (10 * groupe.PoidsMin / 100)))
                     {
                         if (groupe.PoidsMax > ((groupe.PoidsMin) + (20 * groupe.PoidsMin / 100)))
                         {
                             groupe.Commentaire = "20% différence poids."+ groupe.Commentaire;
-                            lineColor = Brushes.Orange;
+                             lineColor = "#E86E00";
                         }
                         else
                         {
                             groupe.Commentaire = "10% différence poids."+ groupe.Commentaire;
-                            lineColor = Brushes.Yellow;
+                            lineColor = "#FCBD00";
                         }                        
                     }                    
                 }
                 if (groupe.Competiteurs.Count <= 1)
                 {
                     groupe.Commentaire = "1 seul compétiteur."+ groupe.Commentaire;
-                    lineColor = Brushes.OrangeRed;
+                    lineColor = "#DB372D";
                 }
             }
             return lineColor;

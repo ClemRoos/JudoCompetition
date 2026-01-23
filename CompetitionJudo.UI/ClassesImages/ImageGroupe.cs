@@ -79,11 +79,8 @@ namespace CompetitionJudo.UI
                     case 5:
                         Organisation = new PouleDe5(Groupe.Competiteurs); 
                         break;
-                    case 6:
-                        Organisation = new PouleDe6(Groupe.Competiteurs); 
-                        break;
                     default:
-                        throw new Exception("Impossible de créer une poule de plus de 6 personnes");
+                        throw new Exception("Impossible de créer une poule de plus de 5 personnes");
                 }
             }
         }

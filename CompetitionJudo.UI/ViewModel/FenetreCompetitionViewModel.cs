@@ -557,11 +557,11 @@ namespace CompetitionJudo.UI.ViewModel
 
         private void ResetChampsNouveauCompetiteur()
         {
-            NouveauCompetiteurPrenom = "Prenom";
-            NouveauCompetiteurNom = "Nom";
-            NouveauCompetiteurPoids = "Poids";
-            NouveauCompetiteurCategorie = "Catégorie";
-            NouveauCompetiteurClub = "Club";
+            NouveauCompetiteurPrenom = "";
+            NouveauCompetiteurNom = "";
+            NouveauCompetiteurPoids = "";
+            NouveauCompetiteurCategorie = "";
+            NouveauCompetiteurClub = "";
             NouveauCompetiteurEstPresent = false;
             NouveauCompetiteurSexe = 1;
         }

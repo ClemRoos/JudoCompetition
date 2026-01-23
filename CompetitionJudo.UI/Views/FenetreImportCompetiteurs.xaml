@@ -3,11 +3,79 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Importer" 
         Height="auto" 
-        Width="auto"
-        Background="#FFA8A8A8" 
+        Width="500"
+        Background="WhiteSmoke" 
+        WindowStyle="ThreeDBorderWindow"
         FontFamily="Segoe UI Light" 
-        FontSize="14" >
-    <GroupBox Header="Importer" Margin="5,5,5,5" >
+        FontSize="16" >
+
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#3271EA" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="wrapper"
+                                Background="#01000000">
+                            <Border Name="inner"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#4E8FF8"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="MyButtonValidateStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#44C265" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate 
+  TargetType="{x:Type Button}">
+                        <Border 
+      Name="wrapper"
+      Background="#01000000">
+                            <Border 
+          Name="inner"
+          Background="{TemplateBinding Background}">
+                                <ContentPresenter 
+              Margin="{TemplateBinding Padding}"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center" />
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#80DA88"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="1"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background" Value="LightGray"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    <GroupBox 
+        BorderThickness="2"
+        BorderBrush="#1976D2" 
+        Foreground="#1976D2"
+        Header="Importer" 
+        Margin="5,5,5,5" >
     <StackPanel Orientation="Vertical">        
             <ContentControl MaxHeight="300">
                 <DataGrid Name="GrilleCompetiteur" Margin="5,5,5,5" ItemsSource="{Binding ListeNouveauxCompetiteur}" CanUserAddRows="False" AutoGenerateColumns="False" CanUserReorderColumns="True" CanUserSortColumns="True">
@@ -23,19 +91,43 @@
 
             </ContentControl>
         
-            <StackPanel Orientation="Horizontal">
-            <Button Name="ButtonOk" HorizontalAlignment="Right" Width="100" Margin="10,0" Height="45" Click="ButtonOk_Click">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button 
+                Name="ButtonOk" 
+                HorizontalAlignment="Right" 
+                Width="120" 
+                Margin="10,0" 
+                Height="45" 
+                Click="ButtonOk_Click"
+                Style="{StaticResource MyButtonValidateStyle}">
                 <StackPanel Orientation="Horizontal">
-                    <Image  Source="/Resources/Ajouter.png" Width="25" Height="25" Margin="5,0"/>
+                    <Image  Source="/Resources/PersonAdd_White.png" Width="25" Height="25" Margin="5,0"/>
                     <TextBlock Text="Importer" VerticalAlignment="Center"></TextBlock>
                 </StackPanel>
-            </Button>
-            <Button Name="ButtonAnnuler" HorizontalAlignment="Right" Width="100" Margin="10,0" Height="45" Click="ButtonAnnuler_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            <Button 
+                Name="ButtonAnnuler" 
+                HorizontalAlignment="Right" 
+                Width="120" 
+                Margin="10,0" 
+                Height="45" 
+                Click="ButtonAnnuler_Click"
+                Style="{StaticResource MyButtonStyle}">
                 <StackPanel Orientation="Horizontal">
-                    <Image  Source="/Resources/Supprimer3.png" Width="25" Height="25" Margin="5,0"/>
+                    <Image  Source="/Resources/Cancel_White.png" Width="25" Height="25" Margin="5,0"/>
                     <TextBlock Text="Annuler" VerticalAlignment="Center"></TextBlock>
                 </StackPanel>
-            </Button>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
         </StackPanel>        
     </StackPanel>
     </GroupBox>

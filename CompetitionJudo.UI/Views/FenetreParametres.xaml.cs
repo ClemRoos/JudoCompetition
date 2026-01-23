@@ -78,17 +78,20 @@ namespace CompetitionJudo.UI
 
             switch (VM.EchelleImpression)
             {
-                case 100:
+                case 75:
                     ListeEchelleImpression.SelectedIndex = 0;
                     break;
-                case 125:
+                case 100:
                     ListeEchelleImpression.SelectedIndex = 1;
                     break;
-                case 150:
+                case 125:
                     ListeEchelleImpression.SelectedIndex = 2;
                     break;
-                case 175:
+                case 150:
                     ListeEchelleImpression.SelectedIndex = 3;
+                    break;
+                case 175:
+                    ListeEchelleImpression.SelectedIndex = 4;
                     break;
                 default:
                     ListeEchelleImpression.SelectedIndex = 1;

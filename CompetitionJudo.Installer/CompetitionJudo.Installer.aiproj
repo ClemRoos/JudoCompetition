@@ -17,8 +17,9 @@
     </LoadFromTemplate>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'DefaultBuild' ">
-    <OutputPath>C:\Dev2025</OutputPath>
-    <PackageName>CompetitionJudoInstaller</PackageName>
+    <OutputPath>
+    </OutputPath>
+    <PackageName>JCV Competition Judo </PackageName>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CompetitionJudo.Installer.aip">

@@ -166,4 +166,91 @@
   <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Save_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Print_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Print_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Female_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Female_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddPerson_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddPerson_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Male_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Male_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Generate_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Generate_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Import_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Import_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stats_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stats_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FileOpen_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FileOpen_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Download_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Download_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Create_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Create_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Male" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Male.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Female" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Female.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancel_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PrintOne_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PrintOne_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PrintMultiple_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PrintMultiple_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tableau_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tableau_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Poule_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Poule_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Valid_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Valid_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PersonAdd_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PersonAdd_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boy_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Boy_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Girl_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Girl_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Girl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Girl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Boy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
