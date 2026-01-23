@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DOCUMENT Type="Advanced Installer" CreateVersion="23.3" version="23.3" Modules="simple" RootPath="." Language="en" Id="{71605F23-4975-4695-B6C9-D64F86BFB4D0}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_APP_FILE" Value="[#CompetitionJudo.exe]"/>
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_CompetitionJudo.Business.dll" Value="..\CompetitionJudo.BusinessDLL\bin\Debug"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_CompetitionJudo.Business.dll_1" Value="..\CompetitionJudo.BusinessDLL\bin\Debug"/>
@@ -50,11 +51,13 @@
     <ROW Property="ARPCOMMENTS" Value="Fichier d&apos;installation pour windows. Version 1.2.0 [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPCONTACT" Value="clem.roos@gmail.com"/>
     <ROW Property="ARPPRODUCTICON" Value="logoJCV2Ico.exe" Type="8"/>
+    <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="JCV"/>
     <ROW Property="ProductCode" Value="1033:{B9D32FC6-2583-4C6A-8D90-0516F6E97B95} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Competition Judo"/>
     <ROW Property="ProductVersion" Value="1.2.0" Options="32"/>
+    <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{8029230C-CC7C-4A18-88F1-A65287E7BB23}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -73,6 +76,7 @@
     <ROW Directory="CompetitionJudo.Business_Dir" Directory_Parent="APPDIR" DefaultDir="COMPET~1.BUS|CompetitionJudo.Business" DirectoryOptions="3"/>
     <ROW Directory="CompetitionJudo.Data_Dir" Directory_Parent="APPDIR" DefaultDir="COMPET~1.DAT|CompetitionJudo.Data" DirectoryOptions="3"/>
     <ROW Directory="CompetitionJudo.UI_Dir" Directory_Parent="APPDIR" DefaultDir="COMPET~1.UI|CompetitionJudo.UI" DirectoryOptions="3"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
@@ -146,7 +150,7 @@
     <ROW Name="AI_APPPATH_PERBUILD_System.Threading.Tasks.Extensions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Threading.Tasks.Extensions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll]" Type="2" Content="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFileName="JCV Competition Judo" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFileName="Installer JCV Competition Judo" Languages="en" InstallationType="4" UseLargeSchema="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -203,6 +207,7 @@
     <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
     <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="LaunchApp"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
@@ -227,6 +232,7 @@
     <ROW Feature_="MainFeature" Component_="CompetitionJudo.UI_SymbolsOutput"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="AI_PROPPATH_FILENAME_PERBUILD_Comp.exe_etitionJudo" SourcePath="..\CompetitionJudo.UI\logoJCV3Ico.ico" Index="0"/>
     <ROW Name="logoJCV2Ico.exe" SourcePath="..\CompetitionJudo.UI\logoJCV2Ico.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
@@ -259,6 +265,7 @@
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="AI_PROPPATH_FILENAME_PERBUILD_Compe" Directory_="DesktopFolder" Name="COMPET~1.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_CompetitionJudo.exe]" Component_="CompetitionJudo.UI_PrimaryOutput" Target="[#CompetitionJudo.exe]" Hotkey="0" Icon_="AI_PROPPATH_FILENAME_PERBUILD_Comp.exe_etitionJudo" IconIndex="0" ShowCmd="1" WkDir="CompetitionJudo.UI_Dir"/>
     <ROW Shortcut="CompetitionJudo" Directory_="SHORTCUTDIR" Name="COMPET~1|CompetitionJudo" Component_="CompetitionJudo.UI_PrimaryOutput" Target="[#CompetitionJudo.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
