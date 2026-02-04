@@ -693,17 +693,17 @@ namespace CompetitionJudo.UI.ViewModel
 
         private void ImprimerGroupes()
         {
-            var lesGroupes = Donnee.ListeGroupes.Where(g => g.PourImpression).ToList();
-            if (lesGroupes.Count > 0)
+            var groupesAImprimer = Donnee.ListeGroupes.Where(g => g.PourImpression).ToList();
+            if (groupesAImprimer.Count > 0)
             {
-                if (!lesGroupes.Any(g => !g.EstValide))
+                if (!groupesAImprimer.Any(g => !g.EstValide))
                 {
-                    var fenetreImpression = new FenetreImpression(lesGroupes, Donnee.NomCompetition, Donnee.DateCompetition);
+                    var fenetreImpression = new FenetreImpression(groupesAImprimer, Donnee.NomCompetition, Donnee.DateCompetition);
                     fenetreImpression.ShowDialog();
                 }
                 else
                 {
-                    List<int> listeGroupesNonValides = lesGroupes.Where(g => !g.EstValide).Select(g => g.id).ToList();
+                    List<int> listeGroupesNonValides = groupesAImprimer.Where(g => !g.EstValide).Select(g => g.id).ToList();
                     listeGroupesNonValides.Sort();
                     MessageBox.Show(String.Format("{0}{1}Poules n° : {2}", "Des poules ont un mauvais nombre de compétiteurs ", Environment.NewLine, string.Join(", ", listeGroupesNonValides), "Erreur", MessageBoxButton.OK, MessageBoxImage.Error));
                 }

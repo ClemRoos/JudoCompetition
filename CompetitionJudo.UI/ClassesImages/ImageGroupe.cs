@@ -42,15 +42,15 @@ namespace CompetitionJudo.UI
                 }
                 else if (Groupe.Competiteurs.Count <= 4)
                 {
-                    Organisation = new TableauDe4(Groupe.Competiteurs);
+                    Organisation = new TableauDe4(Groupe.Competiteurs.OrderBy(c=>c.Poids).ToList());
                 }
                 else if(Groupe.Competiteurs.Count > 4 && Groupe.Competiteurs.Count <= 8)
                 {
-                    Organisation = new TableauDe8(Groupe.Competiteurs);
+                    Organisation = new TableauDe8(Groupe.Competiteurs.OrderBy(c => c.Poids).ToList());
                 }
                 else if(Groupe.Competiteurs.Count > 8 && Groupe.Competiteurs.Count <= 16)
                 {
-                    Organisation = new TableauDe16(Groupe.Competiteurs);
+                    Organisation = new TableauDe16(Groupe.Competiteurs.OrderBy(c => c.Poids).ToList());
                 }
                 //else if(Groupe.Competiteurs.Count > 16 && Groupe.Competiteurs.Count <= 32)
                 //{
@@ -68,16 +68,16 @@ namespace CompetitionJudo.UI
                     case 1:
                         throw new Exception("Impossible de créer une poule contenant une seule personne.");
                     case 2:                        
-                         Organisation = new PouleDe2(Groupe.Competiteurs);
+                         Organisation = new PouleDe2(Groupe.Competiteurs.OrderBy(c => c.Poids).ToList());
                          break;
                     case 3:                        
-                        Organisation = new PouleDe3(Groupe.Competiteurs); 
+                        Organisation = new PouleDe3(Groupe.Competiteurs.OrderBy(c => c.Poids).ToList()); 
                         break;
                     case 4:
-                        Organisation = new PouleDe4(Groupe.Competiteurs); 
+                        Organisation = new PouleDe4(Groupe.Competiteurs.OrderBy(c => c.Poids).ToList()); 
                         break;
                     case 5:
-                        Organisation = new PouleDe5(Groupe.Competiteurs); 
+                        Organisation = new PouleDe5(Groupe.Competiteurs.OrderBy(c => c.Poids).ToList()); 
                         break;
                     default:
                         throw new Exception("Impossible de créer une poule de plus de 5 personnes");

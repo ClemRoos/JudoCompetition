@@ -85,23 +85,23 @@ namespace CompetitionJudo.UI
                     tableauCompetiteurs.DataContext = actualSelected;
                     if (groupe.TypeGroupe == TypeGroupe.Poule)
                     {
-                        estUnePoule();
+                        decorerEnPoule();
                     }
                     else
                     {
-                        estUnTableau();
+                        decorerEnTableau();
                     }
                 }
             }
         }
 
-        private void estUnePoule()
+        private void decorerEnPoule()
         {
             LabelTableau.TextDecorations = TextDecorations.Strikethrough;
             LabelPoule.TextDecorations = null;
         }
 
-        private void estUnTableau()
+        private void decorerEnTableau()
         {
             LabelPoule.TextDecorations = TextDecorations.Strikethrough;
             LabelTableau.TextDecorations = null;
@@ -115,12 +115,12 @@ namespace CompetitionJudo.UI
                 {
                     if (groupe.TypeGroupe == TypeGroupe.Poule)
                     {
-                        estUnTableau();
+                        decorerEnTableau();
                         groupe.TypeGroupe = TypeGroupe.Tableau;
                     }
                     else
                     {
-                        estUnePoule();
+                        decorerEnPoule();
                         groupe.TypeGroupe = TypeGroupe.Poule;
                     }
                 }

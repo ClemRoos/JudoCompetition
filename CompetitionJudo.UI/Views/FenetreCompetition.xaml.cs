@@ -27,6 +27,7 @@ namespace CompetitionJudo.UI
             DataContext = VM;
 
             FiltreColonneSexe.ItemsSource = VM.ListeSexes;
+            FiltreColonneSexe2.ItemsSource = VM.ListeSexes;
             FiltreColonneEstPrésent.ItemsSource = VM.ListePresence;
             FiltreColonneCategorie.ItemsSource = VM.ListeCategories;
         }
@@ -87,6 +88,7 @@ namespace CompetitionJudo.UI
                 VM.FiltrePrenom = FiltreColonnePrenom.Text;
                 VM.FiltreCategorie = FiltreColonneCategorie.SelectedValue.ToString();
                 VM.FiltreSexe = FiltreColonneSexe.SelectedValue.ToString();
+                VM.FiltreSexe = FiltreColonneSexe2.SelectedValue.ToString();
                 VM.FiltrePresence = FiltreColonneEstPrésent.SelectedValue.ToString();
             }
         }

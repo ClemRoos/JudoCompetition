@@ -32,12 +32,12 @@ namespace CompetitionJudo.Data
             var n7 = new Coordonnee(660, 310);
             var n8 = new Coordonnee(660, 380);
             listeCoordonneesNom.Add(n1);
-            listeCoordonneesNom.Add(n3);
-            listeCoordonneesNom.Add(n5);
-            listeCoordonneesNom.Add(n7);
             listeCoordonneesNom.Add(n2);
-            listeCoordonneesNom.Add(n6);
+            listeCoordonneesNom.Add(n3);
             listeCoordonneesNom.Add(n4);
+            listeCoordonneesNom.Add(n5);
+            listeCoordonneesNom.Add(n6);
+            listeCoordonneesNom.Add(n7);
             listeCoordonneesNom.Add(n8);
             var p1 = new Coordonnee(30, 190);
             var p2 = new Coordonnee(30, 260);
@@ -48,12 +48,12 @@ namespace CompetitionJudo.Data
             var p7 = new Coordonnee(660, 325);
             var p8 = new Coordonnee(660, 395);
             listeCoordonneesPrenom.Add(p1);
-            listeCoordonneesPrenom.Add(p3);
-            listeCoordonneesPrenom.Add(p5);
-            listeCoordonneesPrenom.Add(p7);
             listeCoordonneesPrenom.Add(p2);
-            listeCoordonneesPrenom.Add(p6);
+            listeCoordonneesPrenom.Add(p3);
             listeCoordonneesPrenom.Add(p4);
+            listeCoordonneesPrenom.Add(p5);
+            listeCoordonneesPrenom.Add(p6);
+            listeCoordonneesPrenom.Add(p7);
             listeCoordonneesPrenom.Add(p8);
             var c1 = new Coordonnee(30, 205);
             var c2 = new Coordonnee(30, 275);
@@ -64,12 +64,12 @@ namespace CompetitionJudo.Data
             var c7 = new Coordonnee(660, 340);
             var c8 = new Coordonnee(660, 410);
             listeCoordonneesClub.Add(c1);
-            listeCoordonneesClub.Add(c3);
-            listeCoordonneesClub.Add(c5);
-            listeCoordonneesClub.Add(c7);
             listeCoordonneesClub.Add(c2);
-            listeCoordonneesClub.Add(c6);
+            listeCoordonneesClub.Add(c3);
             listeCoordonneesClub.Add(c4);
+            listeCoordonneesClub.Add(c5);
+            listeCoordonneesClub.Add(c6);
+            listeCoordonneesClub.Add(c7);
             listeCoordonneesClub.Add(c8);
         }
         

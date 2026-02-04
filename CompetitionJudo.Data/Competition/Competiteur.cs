@@ -18,7 +18,7 @@ namespace CompetitionJudo.Data
             {
                 if (String.IsNullOrEmpty(nom))
                     return nom;
-                return nom.First().ToString().ToUpper() + nom.Substring(1);
+                return nom.First().ToString().ToUpper() + nom.Substring(1).ToLower();
             }
 
             set { nom = value; }
