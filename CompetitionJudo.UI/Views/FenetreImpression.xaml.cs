@@ -139,7 +139,7 @@ namespace CompetitionJudo.UI
             graphic.DrawImage(ig.imageGroupe, 1, 1, ig.imageGroupe.Width * ParametreEchelleWindows, ig.imageGroupe.Height * ParametreEchelleWindows);
 
             graphic.DrawString(string.Format(NomDateCompetition, VM.NomCompetition.ToString(), String.Format("{0:d MMMM yyyy}", VM.DateCompetition)), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesNomCompetition.X, ig.Organisation.CoordonneesNomCompetition.Y));
-            graphic.DrawString(string.Format(DefinitionPoule, ig.Groupe.Categorie, ig.Organisation.grilleCompetiteurs[0].Poule.ToString(), poidsMin, poidsMax), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesPoidsGroupe.X, ig.Organisation.CoordonneesPoidsGroupe.Y));
+            graphic.DrawString(string.Format(DefinitionPoule, ig.Groupe.Categorie, ig.Organisation.grilleCompetiteurs[0].IndexGroupe.ToString(), poidsMin, poidsMax), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesPoidsGroupe.X, ig.Organisation.CoordonneesPoidsGroupe.Y));
             graphic.DrawString(string.Format(TempsCombat, ig.Groupe.TempsCombat.TimeSinceLastEvent.Minutes, ig.Groupe.TempsCombat.TimeSinceLastEvent.Seconds), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesTempsCombat.X, ig.Organisation.CoordonneesTempsCombat.Y));
             graphic.DrawString(string.Format(TempsImmobilisationIppon, ig.Groupe.TempsImmo.TimeSinceLastEvent.Seconds), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesTempsImmobilisationIppon.X, ig.Organisation.CoordonneesTempsImmobilisationIppon.Y));
 
@@ -171,7 +171,7 @@ namespace CompetitionJudo.UI
             //graphic.DrawImage(ig.imageGroupe, ulCorner);
 
             graphic.DrawString(string.Format(NomDateCompetition, VM.NomCompetition.ToString(), String.Format("{0:d MMMM yyyy}", VM.DateCompetition)), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesNomCompetition.X, ig.Organisation.CoordonneesNomCompetition.Y));
-            graphic.DrawString(string.Format(DefinitionPoule, ig.Groupe.Categorie, ig.Organisation.grilleCompetiteurs[0].Poule.ToString(), poidsMinG1, poidsMaxG1), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesPoidsGroupe.X, ig.Organisation.CoordonneesPoidsGroupe.Y));
+            graphic.DrawString(string.Format(DefinitionPoule, ig.Groupe.Categorie, ig.Organisation.grilleCompetiteurs[0].IndexGroupe.ToString(), poidsMinG1, poidsMaxG1), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesPoidsGroupe.X, ig.Organisation.CoordonneesPoidsGroupe.Y));
             graphic.DrawString(string.Format(TempsCombat, ig.Groupe.TempsCombat.TimeSinceLastEvent.Minutes, ig.Groupe.TempsCombat.TimeSinceLastEvent.Seconds), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesTempsCombat.X, ig.Organisation.CoordonneesTempsCombat.Y));
             graphic.DrawString(string.Format(TempsImmobilisationIppon, ig.Groupe.TempsImmo.TimeSinceLastEvent.Seconds), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesTempsImmobilisationIppon.X, ig.Organisation.CoordonneesTempsImmobilisationIppon.Y));
 
@@ -194,7 +194,7 @@ namespace CompetitionJudo.UI
                 graphic.DrawImage(ig2.imageGroupe, 1, 585, ig2.imageGroupe.Width * ParametreEchelleWindows, ig2.imageGroupe.Height * ParametreEchelleWindows);
 
                 graphic.DrawString(string.Format(NomDateCompetition, VM.NomCompetition.ToString(), String.Format("{0:d MMMM yyyy}", VM.DateCompetition)), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesNomCompetition.X, ig.Organisation.CoordonneesNomCompetition.Y+585));
-                graphic.DrawString(string.Format(DefinitionPoule, ig2.Groupe.Categorie, ig2.Organisation.grilleCompetiteurs[0].Poule.ToString(), poidsMinG2, poidsMaxG2), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesPoidsGroupe.X, ig.Organisation.CoordonneesPoidsGroupe.Y+585));
+                graphic.DrawString(string.Format(DefinitionPoule, ig2.Groupe.Categorie, ig2.Organisation.grilleCompetiteurs[0].IndexGroupe.ToString(), poidsMinG2, poidsMaxG2), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesPoidsGroupe.X, ig.Organisation.CoordonneesPoidsGroupe.Y+585));
                 graphic.DrawString(string.Format(TempsCombat, ig2.Groupe.TempsCombat.TimeSinceLastEvent.Minutes, ig2.Groupe.TempsCombat.TimeSinceLastEvent.Seconds), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesTempsCombat.X, ig.Organisation.CoordonneesTempsCombat.Y+585));
                 graphic.DrawString(string.Format(TempsImmobilisationIppon, ig2.Groupe.TempsImmo.TimeSinceLastEvent.Seconds), drawFont, drawBrush, new PointF(ig.Organisation.CoordonneesTempsImmobilisationIppon.X, ig.Organisation.CoordonneesTempsImmobilisationIppon.Y+585));
 

@@ -10,7 +10,7 @@ namespace CompetitionJudo.Data
 {
     public class Competiteur
     {
-        public int? Poule { get; set; }
+        public int? IndexGroupe { get; set; }
         private string nom;
         public string Nom
         {
@@ -61,7 +61,7 @@ namespace CompetitionJudo.Data
         public Competiteur()
         {
             Resultat = null;
-            Poule = null;
+            IndexGroupe = null;
             Id = new Guid().GetHashCode();
         }
     }

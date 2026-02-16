@@ -211,7 +211,19 @@ namespace CompetitionJudo.UI
             }
             VM.ListeGroupes = listGroupPourImpression;
         }
-        
+
         #endregion
+
+        private void FiltreColonneNom_GotFocus(object sender, RoutedEventArgs e)
+        {
+            var tb = (TextBox)sender;
+            tb.Text = string.Empty;
+        }
+
+        private void FiltreColonnePrenom_GotFocus(object sender, RoutedEventArgs e)
+        {
+            var tb = (TextBox)sender;
+            tb.Text = string.Empty;
+        }
     }
 }

@@ -307,7 +307,7 @@
                             </Button.Resources>
                         </Button>
                         
-                        <Button x:Name="boutonGenererUnGroupe" Height="40"  Margin="10,5" Width="140" Command="{Binding ClickImprimerGroupes}" Click="boutonGenererUnGroupe_Click" Style="{StaticResource MyButtonValidateStyle}">
+                        <Button x:Name="boutonImprimer" Height="40"  Margin="10,5" Width="140" Command="{Binding ClickImprimerGroupes}" Click="boutonGenererUnGroupe_Click" Style="{StaticResource MyButtonValidateStyle}">
                             <StackPanel Orientation="Horizontal">
                                 <Image Name="ImageImprimer" Source="/Resources/Print_White.png" Width="25" Height="30" Margin="5,0"/>
                                 <TextBlock Text="Imprimer" VerticalAlignment="Center"></TextBlock>
@@ -412,25 +412,45 @@
                                     <RowDefinition Height="20" />
                                     <RowDefinition Height="20" />
                                     <RowDefinition Height="20" />
+                                    <RowDefinition Height="20" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Content="Mini Poussins" Grid.Row="0" Grid.Column="0" Padding="0"/>
-                                <Label Content="Poussins" Grid.Row="1" Grid.Column="0" Padding="0"/>
-                                <Label Content="Benjamins" Grid.Row="2" Grid.Column="0" Padding="0"/>
-                                <Label Content="Minimes" Grid.Row="3" Grid.Column="0" Padding="0"/>
-                                <Label Content="Cadets" Grid.Row="4" Grid.Column="0" Padding="0"/>
-                                <Label Content="Juniors" Grid.Row="5" Grid.Column="0" Padding="0"/>
-                                <Label Content="Seniors" Grid.Row="6" Grid.Column="0" Padding="0"/>
-                                <Label Content="{Binding StatsMPPresents}" Grid.Row="0" Grid.Column="1" Padding="0"/>
-                                <Label Content="{Binding StatsPPresents}" Grid.Row="1" Grid.Column="1" Padding="0"/>
-                                <Label Content="{Binding StatsBPresents}" Grid.Row="2" Grid.Column="1" Padding="0"/>
-                                <Label Content="{Binding StatsMPresents}" Grid.Row="3" Grid.Column="1" Padding="0"/>
-                                <Label Content="{Binding StatsCPresents}" Grid.Row="4" Grid.Column="1" Padding="0"/>
-                                <Label Content="{Binding StatsJPresents}" Grid.Row="5" Grid.Column="1" Padding="0"/>
-                                <Label Content="{Binding StatsSPresents}" Grid.Row="6" Grid.Column="1" Padding="0"/>
+                                <Label Content="Total" Grid.Row="0" Grid.Column="1" Padding="0"/>
+                                <Label Content="M" Grid.Row="0" Grid.Column="2" Padding="0"/>
+                                <Label Content="F" Grid.Row="0" Grid.Column="3" Padding="0"/>
+                                <Label Content="Mini Poussins" Grid.Row="1" Grid.Column="0" Padding="0"/>
+                                <Label Content="Poussins" Grid.Row="2" Grid.Column="0" Padding="0"/>
+                                <Label Content="Benjamins" Grid.Row="3" Grid.Column="0" Padding="0"/>
+                                <Label Content="Minimes" Grid.Row="4" Grid.Column="0" Padding="0"/>
+                                <Label Content="Cadets" Grid.Row="5" Grid.Column="0" Padding="0"/>
+                                <Label Content="Juniors" Grid.Row="6" Grid.Column="0" Padding="0"/>
+                                <Label Content="Seniors" Grid.Row="7" Grid.Column="0" Padding="0"/>
+                                <Label Content="{Binding StatsMPPresents}" Grid.Row="1" Grid.Column="1" Padding="0"/>
+                                <Label Content="{Binding StatsMPMPresents}" Grid.Row="1" Grid.Column="2" Padding="0"/>
+                                <Label Content="{Binding StatsMPFPresents}" Grid.Row="1" Grid.Column="3" Padding="0"/>
+                                <Label Content="{Binding StatsPPresents}" Grid.Row="2" Grid.Column="1" Padding="0"/>
+                                <Label Content="{Binding StatsPMPresents}" Grid.Row="2" Grid.Column="2" Padding="0"/>
+                                <Label Content="{Binding StatsPFPresents}" Grid.Row="2" Grid.Column="3" Padding="0"/>
+                                <Label Content="{Binding StatsBPresents}" Grid.Row="3" Grid.Column="1" Padding="0"/>
+                                <Label Content="{Binding StatsBMPresents}" Grid.Row="3" Grid.Column="2" Padding="0"/>
+                                <Label Content="{Binding StatsBFPresents}" Grid.Row="3" Grid.Column="3" Padding="0"/>
+                                <Label Content="{Binding StatsMPresents}" Grid.Row="4" Grid.Column="1" Padding="0"/>
+                                <Label Content="{Binding StatsMMPresents}" Grid.Row="4" Grid.Column="2" Padding="0"/>
+                                <Label Content="{Binding StatsMFPresents}" Grid.Row="4" Grid.Column="3" Padding="0"/>
+                                <Label Content="{Binding StatsCPresents}" Grid.Row="5" Grid.Column="1" Padding="0"/>
+                                <Label Content="{Binding StatsCMPresents}" Grid.Row="5" Grid.Column="2" Padding="0"/>
+                                <Label Content="{Binding StatsCFPresents}" Grid.Row="5" Grid.Column="3" Padding="0"/>
+                                <Label Content="{Binding StatsJPresents}" Grid.Row="6" Grid.Column="1" Padding="0"/>
+                                <Label Content="{Binding StatsJMPresents}" Grid.Row="6" Grid.Column="2" Padding="0"/>
+                                <Label Content="{Binding StatsJFPresents}" Grid.Row="6" Grid.Column="3" Padding="0"/>
+                                <Label Content="{Binding StatsSPresents}" Grid.Row="7" Grid.Column="1" Padding="0"/>
+                                <Label Content="{Binding StatsSMPresents}" Grid.Row="7" Grid.Column="2" Padding="0"/>
+                                <Label Content="{Binding StatsSFPresents}" Grid.Row="7" Grid.Column="3" Padding="0"/>
                             </Grid>
                         </ScrollViewer>
                     </Expander>
@@ -535,24 +555,11 @@
                                         </Style.Triggers>
                                     </Style>
                                 </DataGridCheckBoxColumn.HeaderStyle>
-                                <!--<DataGridCheckBoxColumn.ElementStyle>
-                                    <Style TargetType="CheckBox" >
-                                        <Setter Property="BorderBrush" Value="#1976D2" />
-                                        <Setter Property="BorderThickness" Value="1.5" />
-                                        <Setter Property="HorizontalAlignment" Value="Center" />
-                                        <Setter Property="VerticalAlignment" Value="Center" />
-                                        <Setter Property="LayoutTransform">
-                                            <Setter.Value>
-                                                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </DataGridCheckBoxColumn.ElementStyle>-->
                             </DataGridCheckBoxColumn>
 
                             <DataGridTextColumn 
                                 Header="Poule" 
-                                Binding="{Binding Poule,TargetNullValue=''}" 
+                                Binding="{Binding IndexGroupe,TargetNullValue=''}" 
                                 Width="0.5*" >
                                 <DataGridTextColumn.HeaderStyle>
                                     <Style TargetType="DataGridColumnHeader">
@@ -583,7 +590,7 @@
                                 <DataGridTextColumn.Header>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="Nom" />
-                                        <TextBox Name="FiltreColonneNom" Width="140" Margin="10,0,0,0"  TextChanged="FiltreColonnesNomPrenom_TextChanged"></TextBox>
+                                        <TextBox Name="FiltreColonneNom" Width="140" Margin="10,0,0,0"  TextChanged="FiltreColonnesNomPrenom_TextChanged" GotFocus="FiltreColonneNom_GotFocus"></TextBox>
                                     </StackPanel>
                                 </DataGridTextColumn.Header>
                                 <DataGridTextColumn.HeaderStyle>
@@ -613,7 +620,7 @@
                                 <DataGridTextColumn.Header>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="Prénom" />
-                                        <TextBox Name="FiltreColonnePrenom"  Width="140" Margin="10,0,0,0" TextChanged="FiltreColonnesNomPrenom_TextChanged" />
+                                        <TextBox Name="FiltreColonnePrenom"  Width="140" Margin="10,0,0,0" TextChanged="FiltreColonnesNomPrenom_TextChanged" GotFocus="FiltreColonnePrenom_GotFocus"/>
                                     </StackPanel>
                                 </DataGridTextColumn.Header>
                                 <DataGridTextColumn.HeaderStyle>

@@ -345,6 +345,8 @@ namespace CompetitionJudo.UI.ViewModel
             set
             {
                 Donnee.ListeCompetiteurs = value;
+                OnPropertyChanged("StatsCompetiteursInscrits");
+                OnPropertyChanged("StatsCompetiteursPresents");
                 OnPropertyChanged("ListeCompetiteurs");
                 OnPropertyChanged("ListeGroupes");
             }
@@ -357,11 +359,11 @@ namespace CompetitionJudo.UI.ViewModel
                 List<Groupe> listeGroupe = new List<Groupe>();
 
                 List<int> listegroupes = new List<int>();
-                foreach (var competiteur in Donnee.ListeCompetiteurs.Where(c => c.Poule != null))
+                foreach (var competiteur in Donnee.ListeCompetiteurs.Where(c => c.IndexGroupe != null))
                 {
-                    if (!listegroupes.Any(c => c == competiteur.Poule))
+                    if (!listegroupes.Any(c => c == competiteur.IndexGroupe))
                     {
-                        listegroupes.Add((int)competiteur.Poule);
+                        listegroupes.Add((int)competiteur.IndexGroupe);
                     }
                 }
 
@@ -369,7 +371,7 @@ namespace CompetitionJudo.UI.ViewModel
                 {
                     var groupeTemp = new Groupe() { MaxCompetiteursParPoule = Donnee.NombreParPoule, id = groupe, EchelleImpression = Donnee.EchelleImpression };
 
-                    groupeTemp.Competiteurs.AddRange(Donnee.ListeCompetiteurs.Where(c => c.Poule == groupe));
+                    groupeTemp.Competiteurs.AddRange(Donnee.ListeCompetiteurs.Where(c => c.IndexGroupe == groupe));
 
                     groupeTemp.Categorie = ListeCategories.First(c => c == groupeTemp.Competiteurs.First().Categorie);
                     groupeTemp.TempsCombat = Donnee.TempsCombat.ToDictionary().First(k => k.Key == groupeTemp.Categorie).Value;
@@ -436,12 +438,26 @@ namespace CompetitionJudo.UI.ViewModel
             get
             {
                 OnPropertyChanged("StatsMPPresents");
+                OnPropertyChanged("StatsMPMPresents");
+                OnPropertyChanged("StatsMPFPresents");
                 OnPropertyChanged("StatsPPresents");
+                OnPropertyChanged("StatsPMPresents");
+                OnPropertyChanged("StatsPFPresents");
                 OnPropertyChanged("StatsBPresents");
+                OnPropertyChanged("StatsBMPresents");
+                OnPropertyChanged("StatsBFPresents");
                 OnPropertyChanged("StatsMPresents");
+                OnPropertyChanged("StatsMMPresents");
+                OnPropertyChanged("StatsMFPresents");
                 OnPropertyChanged("StatsCPresents");
+                OnPropertyChanged("StatsCMPresents");
+                OnPropertyChanged("StatsCFPresents");
                 OnPropertyChanged("StatsJPresents");
+                OnPropertyChanged("StatsJMPresents");
+                OnPropertyChanged("StatsJFPresents");
                 OnPropertyChanged("StatsSPresents");
+                OnPropertyChanged("StatsSMPresents");
+                OnPropertyChanged("StatsSFPresents");
                 return Donnee.ListeCompetiteurs.Where(c => c.EstPresent).Count();
             }
         }
@@ -454,11 +470,43 @@ namespace CompetitionJudo.UI.ViewModel
             }
         }
 
+        public int StatsMPMPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.MiniPoussin && c.Sexe==Sexes.M).Count();
+            }
+        }
+
+        public int StatsMPFPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.MiniPoussin && c.Sexe == Sexes.F).Count();
+            }
+        }
+
         public int StatsPPresents
         {
             get
             {
                 return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Poussin).Count();
+            }
+        }
+
+        public int StatsPMPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Poussin && c.Sexe == Sexes.M).Count();
+            }
+        }
+
+        public int StatsPFPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Poussin && c.Sexe == Sexes.F).Count();
             }
         }
 
@@ -469,6 +517,20 @@ namespace CompetitionJudo.UI.ViewModel
                 return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Benjamin).Count();
             }
         }
+        public int StatsBMPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Benjamin && c.Sexe == Sexes.M).Count();
+            }
+        }
+        public int StatsBFPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Benjamin && c.Sexe == Sexes.F).Count();
+            }
+        }
 
         public int StatsMPresents
         {
@@ -477,12 +539,40 @@ namespace CompetitionJudo.UI.ViewModel
                 return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Minime).Count();
             }
         }
+        public int StatsMMPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Minime && c.Sexe == Sexes.M).Count();
+            }
+        }
+        public int StatsMFPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Minime && c.Sexe == Sexes.F).Count();
+            }
+        }
 
         public int StatsCPresents
         {
             get
             {
                 return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Cadet).Count();
+            }
+        }
+        public int StatsCMPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Cadet && c.Sexe == Sexes.M).Count();
+            }
+        }
+        public int StatsCFPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Cadet && c.Sexe == Sexes.F).Count();
             }
         }
 
@@ -494,11 +584,41 @@ namespace CompetitionJudo.UI.ViewModel
             }
         }
 
+        public int StatsJMPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Junior && c.Sexe == Sexes.M).Count();
+            }
+        }
+
+        public int StatsJFPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Junior && c.Sexe == Sexes.F).Count();
+            }
+        }
+
         public int StatsSPresents
         {
             get
             {
                 return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Senior).Count();
+            }
+        }
+        public int StatsSMPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Senior && c.Sexe == Sexes.M).Count();
+            }
+        }
+        public int StatsSFPresents
+        {
+            get
+            {
+                return Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Categorie == Categories.Senior && c.Sexe == Sexes.F).Count();
             }
         }
 
@@ -644,46 +764,47 @@ namespace CompetitionJudo.UI.ViewModel
         {
             Donnee.ListeCompetiteurs = new ObservableCollection<Competiteur>(Donnee.ListeCompetiteurs.OrderBy(c => c.Categorie).ThenBy(d => d.Sexe).ThenBy(f => f.Poids).ToList());
 
-            int poule = 1;
-            int compteur = 1;
+            var indexGroupeTemp = Donnee.ListeCompetiteurs.Where(c => c.Resultat != null)?.Max(c => c.IndexGroupe);
+            int indexGroupe = indexGroupeTemp == null ? 1 : (int)indexGroupeTemp +1;
+            int nbParGroupe = 1;
 
-            foreach (var competiteur in Donnee.ListeCompetiteurs)
+            foreach (var competiteur in Donnee.ListeCompetiteurs.Where(c => c.Resultat == null))
             {
-                competiteur.Poule = null;
+                competiteur.IndexGroupe = null;
             }
 
-            Competiteur compTemp = new Competiteur();
+            Competiteur competiteurTemporaire = new Competiteur();
             bool pouleVide = true;
 
             foreach (var categorie in ListeCategories)
             {
-                foreach (var sexe in ListeSexes)
+                foreach (var sexe in ListeSexes) 
                 {
-                    foreach (var competiteur in Donnee.ListeCompetiteurs.Where(c => c.EstPresent))
+                    foreach (var competiteur in Donnee.ListeCompetiteurs.Where(c => c.EstPresent && c.Resultat == null))
                     {
                         if (competiteur.Sexe == sexe && competiteur.Categorie == (categorie))
                         {
                             pouleVide = false;
-                            competiteur.Poule = poule;
-                            compteur++;
-                            if (compteur == Donnee.NombreParPoule + 1)
+                            competiteur.IndexGroupe = indexGroupe;
+                            nbParGroupe++;
+                            if (nbParGroupe == Donnee.NombreParPoule + 1)
                             {
-                                poule++;
-                                compteur = 1;
+                                indexGroupe++;
+                                nbParGroupe = 1;
                             }
                         }
                     }
                     if (!pouleVide)
                     {
-                        poule++;
-                        compteur = 1;
+                        indexGroupe++;
+                        nbParGroupe = 1;
                         pouleVide = true;
                     }
                 }
                 if (!pouleVide)
                 {
-                    poule++;
-                    compteur = 1;
+                    indexGroupe++;
+                    nbParGroupe = 1;
                     pouleVide = true;
                 }
             }

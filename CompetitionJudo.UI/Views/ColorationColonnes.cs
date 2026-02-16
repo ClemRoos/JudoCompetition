@@ -12,7 +12,7 @@ namespace CompetitionJudo.UI
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             Competiteur input = value as Competiteur;
-            if (input.Poule % 2 != 0)
+            if (input.IndexGroupe % 2 != 0)
             {
                 return "#A1C9FF";
             }
